@@ -11,13 +11,13 @@ var containsDuplicate = function(nums) {
        map.set(n[i])
       false 
   ***/
-  let map = new Map();
+  let hsmap = {};
     
     for(let i = 0; i < nums.length; i++){
-       if(map.has(nums[i])){
+       if(hsmap[nums[i]] !== undefined){
           return true; 
         }
-      map.set(nums[i]); 
+      hsmap[nums[i]] = i;
     }
    return false; 
 };
