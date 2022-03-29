@@ -4,19 +4,21 @@
  * @return {number[]}
  */
 var twoSum = function(numbers, target) {
-  let left = 0;
-  let right = numbers.length - 1;
-    
-   while(left < right){
-    let sum = numbers[left] + numbers[right];
-    
-    if(sum > target){
-     right--;   
-    } else if(sum < target){
-     left++;   
-    }else{
-     return [left + 1, right + 1];   
-    }   
-   }
-  return [-1, -1];  
+ for(let i = 0; i < numbers.length; i++){
+   let left = i + 1;
+   let right = numbers.length;
+   
+   while(left <= right){
+    const mid = left + Math.floor((right - left) / 2);
+    let sum = numbers[mid] + numbers[i];
+    if(sum === target){
+      return [i + 1, mid + 1];          
+    } else if(sum > target){
+      right = mid - 1;   
+    } else{
+      left = mid + 1;  
+    }
+   }  
+ }
+ return [-1, -1];   
 };
