@@ -9,7 +9,7 @@ var searchMatrix = function(matrix, target) {
     let right = matrix[i].length - 1;
     
     while(left <= right){
-     const mid = left + Math.floor((right - left) / 2);
+     const mid = left + Math.floor((right - left) >> 1);
       
       if(matrix[i][mid] === target){
         return true;  
