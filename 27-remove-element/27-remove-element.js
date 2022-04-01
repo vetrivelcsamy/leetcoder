@@ -5,11 +5,10 @@
  */
 var removeElement = function(nums, val) {
     let buffer = 0;
-    
     for(let i = 0; i < nums.length; i++){
-       if(nums[i] !== val){
-         nums[buffer++] = nums[i];   
-       } 
+      if(nums[i] !== val){
+        nums[buffer++] = nums[i];  
+      } 
     }
-   return buffer; 
+    return buffer;   
 };
