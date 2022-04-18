@@ -10,7 +10,7 @@ var searchInsert = function(nums, target) {
   while(start <= end){
     const mid = start + Math.floor((end - start) >> 1);
 
-     if(target <= nums[mid]){
+     if(nums[mid] >= target){
       ans = mid;
        end = mid - 1;  
      }else{
