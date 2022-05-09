@@ -3,7 +3,7 @@
  * @return {boolean}
  */
 var isValid = function(s) {
-   if(s.length % 2 !== 0){
+     if(s.length % 2 !== 0){
       return false; 
    } 
     
@@ -19,5 +19,5 @@ var isValid = function(s) {
        return false;  
      }  
    }
-   return buffer.length === 0; 
+   return buffer.length === 0;   
 };
