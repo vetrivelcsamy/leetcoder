@@ -3,13 +3,13 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-  let hs = new Map();
-    
-   for(let num of nums){
-     if(hs.has(num)){
-      return true;   
+  let hstable = {};
+   
+   for(let i = 0; i < nums.length; i++){
+     if(hstable[nums[i]] !== undefined){
+        return true 
      }
-     hs.set(num);  
-   }
+     hstable[nums[i]] = i;  
+   } 
    return false; 
 };
