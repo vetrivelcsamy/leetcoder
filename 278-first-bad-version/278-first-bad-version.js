@@ -18,23 +18,22 @@ var solution = function(isBadVersion) {
      * @return {integer} The first bad version
      */
     return function(n) {
-      let left = 0;
-      let right = n;
-      
-      while(left <= right){
-       const mid = left + Math.floor((right - left) >> 1);
+     let left = 0;
+     let right = n;
+        
+     while(left <= right){
+       const mid = left + Math.floor((right - left) / 2);
        
         if(isBadVersion(mid)){
-          right = mid - 1;   
+          right = mid - 1;  
         }else{
-          left = mid + 1;  
-        }  
+          left = mid + 1;   
+        } 
       }
-      
-       if(left <= n){
-         return left;   
-       } else{
-         return -1;  
-       } 
+      if(left <= n){
+        return left;  
+      }else{
+        return -1;  
+      }  
     };
 };
