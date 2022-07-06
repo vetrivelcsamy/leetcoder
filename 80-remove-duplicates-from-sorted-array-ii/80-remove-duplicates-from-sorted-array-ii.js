@@ -3,11 +3,16 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    let buffer = 0;
-    for(let i = 0; i < nums.length; i++){
-       if(nums[i] !== nums[i + 2]){
-         nums[buffer++] = nums[i];  
-       } 
+  let slow = 2;
+  let fast = 2;
+  let n = nums.length;  
+    
+  while(fast < n){
+    if(nums[slow - 2] !== nums[fast]){
+      nums[slow] = nums[fast];
+      slow++;  
     }
-    return buffer;
+    fast++;  
+  }
+  return slow;  
 };
