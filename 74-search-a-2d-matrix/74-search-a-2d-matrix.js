@@ -5,9 +5,11 @@
  */
 var searchMatrix = function(matrix, target) {
      for(let i = 0; i < matrix.length; i++){
-     if(matrix[i].includes(target)){
-       return true; 
-     }  
-   }
+      for(let k = 0; k < matrix[i].length; k++){
+        if(matrix[i][k] === target){
+          return true; 
+       }   
+      }     
+    }
    return false;   
 };
