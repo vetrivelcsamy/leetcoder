@@ -3,5 +3,5 @@
  * @return {number[]}
  */
 var sortArray = function(nums) {
-   return nums.sort((a, b) => a - b);
+   return nums.sort((a,b) => a - b); 
 };
