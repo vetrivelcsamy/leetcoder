@@ -4,7 +4,11 @@
  * @return {number[]}
  */
 var addToArrayForm = function(num, k) {
-   let joins = num.join('').toString();  
-   let add = (BigInt(joins) + BigInt(k)).toString();
-   return add.split('');
+    let add = BigInt(num.join('')) + BigInt(k);
+    let str = add.toString();
+    let buffer = [];
+    for(let i = 0; i < str.length; i++){  
+      buffer.push(Number(str[i]));
+    }
+    return buffer;
 };
