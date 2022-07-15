@@ -3,12 +3,13 @@
  * @return {number}
  */
 var findDuplicate = function(nums) {
-   let hsmap = new Map();
+   let hsmap = {};
     
-   for(let num of nums){
-     if(hsmap.has(num)){
-       return num;  
+    for(let i = 0; i < nums.length; i++){
+      if(hsmap[nums[i]] !== undefined){
+       return nums[i];   
+      }
+      hsmap[nums[i]] = i;  
      }
-     hsmap.set(num);  
-   } 
+    
 };
