@@ -3,6 +3,6 @@
  * @return {number}
  */
 var majorityElement = function(nums) {
-  let srt = nums.sort((a,b) => a - b);
-  return srt[Math.floor(srt.length / 2)];  
+    nums.sort((a, b) => a - b);
+    return nums[Math.floor(nums.length / 2)];
 };
